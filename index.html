@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fumigaciones El Rancho</title>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 10px 20px;
+
+  position: sticky;   /* 🔥 clave */
+  top: 0;             /* se pega arriba */
+  z-index: 1000;      /* se queda encima de todo */
+
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo img {
+  height: 60px;
+}
+
+.menu a {
+  color: #2c3e50;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: #27ae60;
+}
+
+/* CONTACTO HEADER */
+
+.contacto-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2c3e50;
+  font-weight: bold;
+<span class="horario">Atención: 8AM - 8PM</span>
+}
+
+
+.whatsapp-header img {
+  width: 28px;
+  animation: saltoWhats 7s infinite;
+}
+
+.whatsapp-header img:hover {
+  transform: scale(1.2);
+}
+
+/* HERO PROFESIONAL 🔥 */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px;
+
+  background:
+    linear-gradient(to right, rgba(255,255,255,0.5) 35%, rgba(255,255,255,0)),
+    url('fumigacion.png');
+
+  background-size: cover;
+  background-position: center right;
+}
+
+.hero-texto {
+  max-width: 600px;
+}
+
+.hero-texto h4 {
+  color: #1e7d3a;
+}
+
+.hero-texto h1 {
+  font-size: 65px;
+  color: #222;
+}
+
+.hero-texto h1 span {
+  color: #1e7d3a;
+}
+
+.hero-texto p {
+  color: #444;
+  font-size: 18px;
+}
+
+.beneficios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+
+/* contenido arriba */
+.overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.overlay {
+  max-width: 500px;
+}
+
+.overlay h1 {
+  font-size: 45px;
+  color: #2c3e50;
+}
+
+.overlay p {
+  font-size: 20px;
+  color: #333;
+}
+
+/* BOTON */
+.boton {
+  background: #ff5a2c;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.boton:hover {
+  background: #e14a1f;
+}
+
+/* SECCIONES */
+.seccion {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+ .novedades {
+  padding: 40px 0;
+}
+
+
+
+ /* HERO EXACTO */
+
+/* TEXTO */
+.hero-texto {
+  max-width: 650px;
+}
+
+.subtitulo {
+  color: #3a5f7d;
+}
+ 
+
+.hero-texto h1 {
+  font-size: 70px;
+  line-height: 1.05;
+  margin: 10px 0;
+  color: #222;
+}
+
+.hero-texto h1 span {
+  color: #0b2a4a; /* 🔥 azul marino */
+}
+
+.hero-texto p {
+  font-size: 18px;
+  color: #444;
+}
+
+/* BENEFICIOS */
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item img {
+  width: 35px;
+}
+
+.item strong {
+  font-size: 12px;
+  color: #222;
+}
+
+.item small {
+  font-size: 11px;
+  color: #666;
+}
+
+/* BOTON */
+
+.boton {
+  background: #0b2a4a; /* 🔥 azul marino */
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.boton:hover {
+  background: #163b63; /* hover elegante */
+}
+ 
+ .boton {
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+
+ @keyframes saltoWhats {
+  0%   { transform: translateY(0); }
+  10%  { transform: translateY(-10px); }
+  20%  { transform: translateY(0); }
+  30%  { transform: translateY(-6px); }
+  40%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+ 
+.contenedor-servicios {
+  display: grid;
+  /* Esto crea 3 columnas de igual tamaño automáticamente */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 25px; /* Espacio entre tus tarjetas */
+  max-width: 1000px; /* Limita el ancho para que no se vean demasiado estiradas */
+  margin: 30px auto 0; /* Centra el bloque en la pantalla */
+  padding: 0 20px;
+}
+
+/* IMPORTANTE: Ajuste para celulares */
+@media (max-width: 768px) {
+  .contenedor-servicios {
+    grid-template-columns: repeat(2, 1fr); /* En tablets, se verán 2 por fila */
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-servicios {
+    grid-template-columns: 1fr; /* En celulares, se verán 1 por fila */
+  }
+}
+
+.card-servicio {
+  background: white;
+  width: 260px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card-servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+ 
+ .fondo-animado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: white;
+  overflow: hidden;
+}
+
+/* círculos animados */
+.fondo-animado::before,
+.fondo-animado::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(11, 42, 74, 0.05); /* azul muy suave */
+  border-radius: 50%;
+  animation: mover 20s infinite alternate;
+}
+
+.fondo-animado::after {
+  left: 60%;
+  top: 40%;
+  width: 300px;
+  height: 300px;
+  animation-duration: 25s;
+}
+
+@keyframes mover {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100px, 150px);
+  }
+}
+
+ 
+ /* FONDO ANIMADO SOLO SERVICIOS */
+/* SECCIÓN DE SERVICIOS - HUMO RÁPIDO Y DINÁMICO */
+/* --- NUEVA SECCIÓN DE HUMO INTENSO Y RÁPIDO (MUY VISIBLE) --- */
+
+/* --- NUEVO HUMO: CAPAS SUPERPUESTAS (Más orgánico) --- */
+/* --- FONDO GRIS CON HUMO REALISTA --- */
+
+/* Contenedor principal de la sección */
+.servicios-fondo {
+  position: relative; /* Necesario para que el canvas y los elementos se posicionen respecto a esto */
+  padding: 80px 20px;
+  overflow: hidden;
+  background: white; /* Color de fondo base */
+}
+
+/* El Canvas como fondo */
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Asegura que esté detrás */
+  pointer-events: none; /* Permite hacer clic en los botones de abajo si es necesario */
+}
+
+/* El contenido (Texto y Tarjetas) debe ir encima */
+.servicios-fondo h2, 
+.servicios-fondo .contenedor-servicios {
+  position: relative; /* Necesario para activar el z-index */
+  z-index: 1; /* Asegura que esté al frente */
+}
+
+
+/* MOVIMIENTO REAL */
+@keyframes humoReal1 {
+  0%   { transform: translate(0,0) scale(1); }
+  25%  { transform: translate(-80px, -40px) scale(1.1); }
+  50%  { transform: translate(60px, 50px) scale(1.15); }
+  75%  { transform: translate(-40px, 30px) scale(1.1); }
+  100% { transform: translate(0,0) scale(1); }
+}
+
+@keyframes humoReal2 {
+  0%   { transform: translate(0,0) scale(1); }
+  25%  { transform: translate(100px, 60px) scale(1.2); }
+  50%  { transform: translate(-60px, -50px) scale(1.15); }
+  75%  { transform: translate(40px, -30px) scale(1.1); }
+  100% { transform: translate(0,0) scale(1); }
+}
+
+/* CONTENIDO ARRIBA */
+.servicios-fondo h2,
+.servicios-fondo .contenedor-servicios {
+  position: relative;
+  z-index: 2;
+}
+
+/* CONTENIDO ARRIBA */
+.servicios-fondo h2,
+.servicios-fondo .contenedor-servicios {
+  position: relative;
+  z-index: 2;
+}/* ANIMACIONES SUAVES */
+@keyframes moverFondo {
+  from {
+    transform: translate(0,0);
+  }
+  to {
+    transform: translate(-200px, -150px);
+  }
+}
+
+@keyframes moverFondo2 {
+  from {
+    transform: translate(0,0);
+  }
+  to {
+    transform: translate(200px, 150px);
+  }
+}
+
+/* ASEGURAR QUE EL CONTENIDO QUEDE ARRIBA */
+.servicios-fondo h2,
+.servicios-fondo .contenedor-servicios {
+  position: relative;
+  z-index: 2;
+}
+
+/* animación estilo Apple */
+@keyframes moverSuave {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(120px, 150px);
+  }
+}
+
+/* para que el contenido esté arriba */
+.servicios-fondo h2,
+.servicios-fondo .contenedor-servicios {
+  position: relative;
+  z-index: 2;
+}
+
+ /* Definimos la animación para que el efecto ocurra rápido al inicio y luego descanse */
+@keyframes resaltaTarjeta {
+  0% { transform: scale(1); box-shadow: 0px 4px 10px rgba(0,0,0,0.1); border: 2px solid transparent; }
+  5% { transform: scale(1.05); box-shadow: 0px 10px 20px rgba(11,42,74,0.3); border: 2px solid #0b2a4a; }
+  10% { transform: scale(1); box-shadow: 0px 4px 10px rgba(0,0,0,0.1); border: 2px solid transparent; }
+  100% { transform: scale(1); } /* Se queda quieto el resto del tiempo */
+}
+
+/* Aplicamos la animación a todas las tarjetas con un ciclo de 40s */
+.card-servicio {
+  animation: resaltaTarjeta 40s infinite;
+}
+
+/* Aplicamos el retraso progresivo para que no se muevan todas al mismo tiempo */
+.card-servicio:nth-child(1) { animation-delay: 0s; }
+.card-servicio:nth-child(2) { animation-delay: 6.66s; }
+.card-servicio:nth-child(3) { animation-delay: 13.33s; }
+.card-servicio:nth-child(4) { animation-delay: 20s; }
+.card-servicio:nth-child(5) { animation-delay: 26.66s; }
+.card-servicio:nth-child(6) { animation-delay: 33.33s; }
+
+.novedades {
+  background: #f9f9f9;
+}
+
+ /* SECCIÓN COMPLETA A PANTALLA */
+.novedades {
+  padding: 40px 0 !important;
+}
+
+/* GRID FULL WIDTH */
+.novedades-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+/* CADA BLOQUE */
+.novedades-grid .item {
+  height: auto;
+}
+
+/* TODAS LAS IMÁGENES (automático 🔥) */
+.novedades-grid .imagen {
+  height: 100%;
+}
+
+.novedades-grid .imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+ .novedades-grid {
+  align-items: stretch;
+}
+
+/* TEXTO */
+.novedades-grid .texto {
+  padding: 80px;
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.novedades-grid h2 {
+  color: #1e7d3a;
+}
+
+.novedades-grid h3 {
+  color: #ff6a00;
+  margin-bottom: 20px;
+}
+
+.novedades-grid p {
+  color: #444;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .novedades-grid {
+    grid-template-columns: 1fr;
+  }
+}
+ 
+
+/* ZOOM INICIAL EN IMÁGENES */
+.novedades-grid .imagen {
+  overflow: hidden;
+}
+
+.novedades-grid .imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform: scale(1.3); /* empieza con zoom */
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+ 
+ /* VIBRACIÓN CADA 5 SEGUNDOS */
+.boton {
+  animation: saltito 3s infinite;
+}
+
+@keyframes saltito {
+  0% { transform: translateY(0); }
+
+  /* 🔥 saltitos */
+  5%  { transform: translateY(-8px); }
+  10% { transform: translateY(0); }
+
+  15% { transform: translateY(-5px); }
+  20% { transform: translateY(0); }
+
+  /* ⏸️ descanso */
+  100% { transform: translateY(0); }
+}
+
+ 
+ .barra-anuncio {
+  width: 100%;
+  background: #2f3e4e; /* gris azulado 🔥 */
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+#texto-barra {
+  transition: opacity 0.5s ease;
+}
+ 
+.barra-anuncio {
+  width: 100%;
+  background: #2f3e4e;
+  color: white;
+  padding: 8px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* contenedor que recorta */
+.contenedor-texto {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* texto que se mueve */
+.barra-anuncio {
+  width: 100%;
+  background: #2f3e4e;
+  color: white;
+  padding: 8px 0;
+  overflow: hidden;
+
+  position: sticky;
+  top: 80px; /* 🔥 AJUSTE CLAVE */
+  z-index: 999;
+}
+.contenedor-texto {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.texto-moviendo {
+  display: flex;
+  width: max-content;
+  animation: scrollInfinito 25s linear infinite;
+}
+
+.texto-moviendo span {
+  padding-right: 80px;
+  white-space: nowrap;
+}
+
+/* 🔥 animación PERFECTA sin salto */
+@keyframes scrollInfinito {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* animación izquierda → derecha */
+@keyframes moverTexto {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+ .faq {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+  width: 100%;
+  background: #0b2a4a;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.faq-question:hover {
+  background: #163b63;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #f9f9f9;
+  transition: max-height 0.4s ease;
+  padding: 0 15px;
+}
+
+.faq-answer p {
+  margin: 15px 0;
+  color: #333;
+}
+
+ .contacto form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contacto input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contacto input:focus {
+  outline: none;
+  border-color: #0b2a4a;
+}
+
+.contacto button {
+  background: #0b2a4a;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contacto button:hover {
+  background: #163b63;
+}
+
+ .contacto {
+  background: #f2f2f2;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.subtitulo-form {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.verde { color: #e53935; }
+.naranja { color: #4a5d73; }
+
+.formulario {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #ddd;
+}
+
+.formulario input,
+.formulario select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: none;
+  background: #e4e8ed; /* 🔥 gris claro moderno */
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.fila {
+  display: flex;
+  gap: 10px;
+}
+
+.fila input,
+.fila select {
+  flex: 1;
+}
+
+.formulario button {
+  background: #4a5d73; /* 🔥 gris azul como la barra */
+  color: white;
+  border: none;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.formulario button:hover {
+  background: #1f2c38; /* 🔥 más oscuro al pasar el mouse */
+}
+
+ .formulario button {
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.formulario button:hover {
+  background: #e65c00;
+}
+
+.privacidad {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.privacidad a {
+  color: green;
+}
+
+
+/* CLIENTES */
+.clientes {
+  background: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.clientes h2 {
+  margin-bottom: 30px;
+  color: #0b2a4a;
+}
+
+/* GRID DE LOGOS */
+.clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+  align-items: center;
+}
+
+/* LOGOS */
+.clientes-grid img {
+  width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+
+  filter: none;      /* 🔥 quitamos blanco y negro */
+  opacity: 1;        /* 🔥 color completo */
+  transition: 0.3s;
+}
+
+/* HOVER */
+.clientes-grid img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .clientes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .clientes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+ .info-contacto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.titulo-contacto {
+  font-size: 12px;
+  color: #777;
+}
+
+.numero-contacto {
+  font-size: 15px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+
+  <div class="logo">
+    <img src="logo.png">
+  </div>
+
+  <div class="menu">
+    <a href="#">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#novedades">Novedades</a>
+    <a href="#faq">FAQ'S</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <div class="contacto-header">
+
+  <a href="https://wa.me/526624044296" target="_blank" class="whatsapp-header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+  </a>
+
+  <div class="info-contacto">
+    <span class="titulo-contacto">Contáctanos</span>
+    <span class="numero-contacto">662 404 4296</span>
+  </div>
+
+</div>
+</div>
+
+<div class="barra-anuncio">
+  <div class="contenedor-texto">
+    <div class="texto-moviendo">
+      <span>
+        Servicio profesional de fumigación, aprovecha y llévate un descuento del 10% por cotizar tu servicio en línea • 
+        Nuestro servicio es 100% profesional y con garantía de calidad, no lo dejes pasar e inicia tu contrato hoy mismo • 
+        Abierto de 8:00AM a 8:00PM agenda tu cita y termina con los inquilinos no deseados •
+      </span>
+
+      <!-- 🔁 DUPLICADO EXACTO -->
+      <span>
+        Servicio profesional de fumigación, aprovecha y llévate un descuento del 10% por cotizar tu servicio en línea • 
+        Nuestro servicio es 100% profesional y con garantía de calidad, no lo dejes pasar e inicia tu contrato hoy mismo • 
+        Abierto de 8:00AM a 8:00PM agenda tu cita y termina con los inquilinos no deseados •
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO 🔥 -->
+<div class="hero">
+
+  <div class="hero-texto">
+
+    <h5 class="subtitulo">PROTEGEMOS TU HOGAR Y NEGOCIO</h5>
+
+    <h1>
+      CONTROL TOTAL<br>
+      <span>DE PLAGAS</span>
+    </h1>
+
+    <p>
+      Eliminamos plagas de forma segura, rápida y efectiva.<br>
+      Protegemos tu salud, tu familia y tu espacio.
+    </p>
+
+    <!-- BENEFICIOS -->
+    <div class="beneficios">
+
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
+        <div>
+          <strong>PRODUCTOS CERTIFICADOS</strong><br>
+          <small>Seguros para tu familia</small>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
+        <div>
+          <strong>SERVICIO RÁPIDO</strong><br>
+          <small>Atención inmediata</small>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
+        <div>
+          <strong>PROFESIONALES</strong><br>
+          <small>Técnicos expertos</small>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
+        <div>
+          <strong>GARANTÍA</strong><br>
+          <small>Satisfacción total</small>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTON -->
+   <a href="#contacto" class="boton">
+      Cotiza aquí tu servicio
+    </a>
+
+  </div>
+
+</div>
+
+<!-- SERVICIOS -->
+<!-- SERVICIOS -->
+<div class="seccion servicios-fondo" id="servicios">
+
+  <!-- CANVAS ANIMADO -->
+  <canvas id="particles"></canvas>
+
+  <h2>Nuestros Servicios</h2>
+
+  <div class="contenedor-servicios">
+
+  <div class="card-servicio">
+    <h3>Control de Cucarachas</h3>
+    <img src="cucaracha.png">
+    <p>Eliminación efectiva de cucarachas con productos seguros y de larga duración.</p>
+  </div>
+
+  <div class="card-servicio">
+    <h3>Control de Roedores</h3>
+    <img src="roedor.png">
+    <p>Erradicamos ratas y ratones con métodos profesionales.</p>
+  </div>
+
+  <div class="card-servicio">
+    <h3>Control de Termitas</h3>
+    <img src="termitas.png">
+    <p>Protege tu casa contra daños estructurales.</p>
+  </div>
+
+  <div class="card-servicio">
+    <h3>Control de Mosquitos</h3>
+    <img src="mosquitos.png">
+    <p>Reduce mosquitos y evita enfermedades con tratamientos especializados.</p>
+  </div>
+
+  <div class="card-servicio">
+    <h3>Desinfección Profesional</h3>
+    <img src="desinfeccion.png">
+    <p>Eliminación de bacterias y virus para espacios seguros y saludables.</p>
+  </div>
+
+  <div class="card-servicio">
+    <h3>Fumigación General</h3>
+    <img src="Fumigaciongeneral.png">
+    <p>Servicio completo contra plagas.</p>
+  </div>
+
+</div>
+
+
+
+ 
+
+    
+
+<div class="seccion novedades" id="novedades">
+
+  <h2>Novedades</h2>
+
+  <div class="novedades-grid">
+
+  <!-- BLOQUE 1 -->
+  <div class="item imagen">
+    <img src="fumigandon2.png">
+  </div>
+
+  <div class="item texto">
+    <h2>DATOS CLAVE QUE UNA EMPRESA</h2>
+    <h3>DE TRANSPORTE DEBE SABER</h3>
+
+    <p>Durante la primavera en México...</p>
+
+    <ul>
+      <li>Mayor reproducción de plagas</li>
+      <li>Riesgo en transporte</li>
+      <li>Contaminación cruzada</li>
+    </ul>
+  </div>
+
+  <!-- BLOQUE 2 -->
+  <div class="item texto">
+    <h2>PROPUESTA DE VALOR</h2>
+    <h3>¿QUÉ TE OFRECEMOS?</h3>
+
+    <p>
+      Servicios profesionales de fumigación adaptados a tu empresa
+      y cumplimiento de normas sanitarias.
+    </p>
+  </div>
+
+  <div class="item imagen">
+    <img src="carrofumigador.png">
+  </div>
+
+<!-- BLOQUE 3 -->
+  <div class="item imagen">
+    <img src="freddyfumigando.png">
+  </div>
+
+  <div class="item texto">
+    <h2>DATOS CLAVE QUE UNA EMPRESA</h2>
+    <h3>DE TRANSPORTE DEBE SABER</h3>
+
+    <p>Durante la primavera en México...</p>
+
+    <ul>
+      <li>Mayor reproducción de plagas</li>
+      <li>Riesgo en transporte</li>
+      <li>Contaminación cruzada</li>
+    </ul>
+  </div>
+
+<!-- BLOQUE 4 -->
+  <div class="item texto">
+    <h2>PROPUESTA DE VALOR</h2>
+    <h3>¿QUÉ TE OFRECEMOS?</h3>
+
+    <p>
+      Servicios profesionales de fumigación adaptados a tu empresa
+      y cumplimiento de normas sanitarias.
+    </p>
+  </div>
+
+  <div class="item imagen">
+    <img src="servicio.png">
+  </div>
+
+
+</div>
+
+<!-- FAQ -->
+<div class="seccion faq" id="faq">
+
+  <h2>Preguntas Frecuentes</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Es seguro para niños y mascotas?</button>
+    <div class="faq-answer">
+      <p>Sí, utilizamos productos certificados y seguros. Solo recomendamos seguir las indicaciones después del servicio.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Tengo que salir de mi casa?</button>
+    <div class="faq-answer">
+      <p>En la mayoría de los casos sí, por unas horas, dependiendo del tipo de fumigación.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Cuánto tarda el servicio?</button>
+    <div class="faq-answer">
+      <p>Entre 30 minutos y 2 horas dependiendo del área y la plaga.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Ofrecen garantía?</button>
+    <div class="faq-answer">
+      <p>Sí, contamos con garantía en nuestros servicios. Si la plaga continúa, regresamos sin costo.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">¿Qué plagas eliminan?</button>
+    <div class="faq-answer">
+      <p>Cucarachas, ratas, ratones, termitas, mosquitos y más.</p>
+    </div>
+  </div>
+
+</div>
+<!-- CONTACTO -->
+<div class="seccion contacto" id="contacto">
+
+  <h2>Escríbenos:</h2>
+  <p class="subtitulo-form">
+    <span class="verde">¡Soluciona tus problemas</span> 
+    <span class="naranja">enviando tus datos.</span>
+  </p>
+
+  <form id="form-cotizacion" class="formulario">
+
+    <input type="text" id="nombre" placeholder="Nombre completo" required>
+
+    <div class="fila">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="telefono" placeholder="Teléfono móvil" required>
+    </div>
+
+    <div class="fila">
+      <input type="date" id="fecha" required>
+      <input type="text" id="ciudad" placeholder="Ciudad / Estado" required>
+    </div>
+
+    <div class="fila">
+      <select id="servicio">
+        <option>Tipo de Servicio</option>
+        <option>Fumigación general</option>
+        <option>Eliminar cucarachas</option>
+        <option>Control de roedores</option>
+        <option>Eliminar hormigas</option>
+      </select>
+
+      <select id="lugar">
+        <option>Servicio para:</option>
+        <option>Casa</option>
+        <option>Negocio</option>
+      </select>
+    </div>
+
+    <!-- reCAPTCHA REAL -->
+    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+
+    <button type="submit">ENVIAR DATOS</button>
+
+    <p class="privacidad">
+      He leído y acepto el <a href="#">Aviso de Privacidad</a>
+    </p>
+
+  </form>
+</div>
+<!-- CLIENTES -->
+<div class="clientes">
+
+  <h2>Nuestros Clientes</h2>
+
+  <div class="clientes-grid">
+
+    <img src="Cliente1.png" alt="Cliente 1">
+    <img src="Cliente2.png" alt="Cliente 2">
+    <img src="Cliente3.png" alt="Cliente 3">
+    <img src="Cliente4.png" alt="Cliente 4">
+    <img src="Cliente5.png" alt="Cliente 5">
+    <img src="Cliente6.png" alt="Cliente 6">
+    <img src="Cliente7.png" alt="Cliente 7">
+    <img src="Cliente8.png" alt="Cliente 8">
+
+  </div>
+</div>
+<footer style="background:#0b2a4a; color:white; text-align:center; padding:20px;">
+  © 2026 Fumigaciones El Rancho - Todos los derechos reservados
+</footer>
+
+ <script>
+window.addEventListener("scroll", function() {
+  let scroll = window.scrollY;
+  let hero = document.querySelector(".hero");
+
+  hero.style.backgroundPosition = "center " + (scroll * 0.5) + "px";
+});
+</script>
+ 
+
+ <script>
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = canvas.parentElement.offsetWidth;
+  canvas.height = canvas.parentElement.offsetHeight;
+}
+
+resizeCanvas();
+
+let particles = [];
+
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: (Math.random() - 0.5) * 1.5,
+    vy: (Math.random() - 0.5) * 1.5
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // dibujar partículas
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+    ctx.fillStyle = "#0b2a4a";
+    ctx.fill();
+  });
+
+  // dibujar líneas
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      let dx = particles[i].x - particles[j].x;
+      let dy = particles[i].y - particles[j].y;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = "rgba(11,42,74,0.2)";
+        ctx.stroke();
+      }
+    }
+  }
+
+  // mover partículas
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+  });
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+
+ 
+ window.addEventListener("resize", resizeCanvas);
+
+
+</script>
+ 
+<script>
+window.addEventListener("scroll", function() {
+  document.querySelectorAll(".novedades-grid .imagen img").forEach(function(img) {
+
+    let rect = img.getBoundingClientRect();
+    let windowHeight = window.innerHeight;
+
+    // qué tan cerca está del centro de pantalla
+    let progreso = 1 - (rect.top / windowHeight);
+
+    // limitar entre 0 y 1
+    progreso = Math.max(0, Math.min(1, progreso));
+
+    // zoom dinámico
+    let scale = 1.5 - (progreso * 0.5);
+
+    img.style.transform = "scale(" + scale + ")";
+  });
+});
+</script>
+
+<script>
+const frases = [
+  "Servicio profesional de fumigación aprovecha y llévate un descuento del 10% por cotizar tu servicio en línea",
+  "Nuestro servicio es 100% profesional y con garantía de calidad, no lo dejes pasar e inicia tu contrato hoy mismo"
+"Abierto de 8:00AM a 8:00PM AGENDA YA TU CITA Y TERMINA CON LOS INQUILINOS NO DESEADOS"
+];
+
+let i = 0;
+const barra = document.getElementById("texto-barra");
+
+setInterval(() => {
+  i = (i + 1) % frases.length;
+  barra.textContent = frases[i];
+}, 12000); // 🔥 más tiempo para textos largos
+</script>
+
+ <script>
+const preguntas = document.querySelectorAll(".faq-question");
+
+preguntas.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const respuesta = btn.nextElementSibling;
+
+    if (respuesta.style.maxHeight) {
+      respuesta.style.maxHeight = null;
+    } else {
+      document.querySelectorAll(".faq-answer").forEach(r => r.style.maxHeight = null);
+      respuesta.style.maxHeight = respuesta.scrollHeight + "px";
+    }
+  });
+});
+</script>
+
+ <script>
+document.getElementById("form-cotizacion").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let nombre = document.getElementById("nombre").value;
+  let direccion = document.getElementById("direccion").value;
+  let colonia = document.getElementById("colonia").value;
+  let cp = document.getElementById("cp").value;
+  let servicio = document.getElementById("servicio").value;
+
+  let mensaje = `Hola, quiero cotizar un servicio:%0A
+Nombre: ${nombre}%0A
+Dirección: ${direccion}%0A
+Colonia: ${colonia}%0A
+Código Postal: ${cp}%0A
+Servicio: ${servicio}`;
+
+  let telefono = "526624044296";
+
+  let url = `https://wa.me/${telefono}?text=${mensaje}`;
+
+  window.open(url, "_blank");
+});
+</script>
+
+ <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+document.getElementById("form-cotizacion").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let nombre = document.getElementById("nombre").value;
+  let email = document.getElementById("email").value;
+  let telefono = document.getElementById("telefono").value;
+  let fecha = document.getElementById("fecha").value;
+  let ciudad = document.getElementById("ciudad").value;
+  let servicio = document.getElementById("servicio").value;
+  let lugar = document.getElementById("lugar").value;
+
+  let mensaje = `Hola, quiero cotizar:%0A
+Nombre: ${nombre}%0A
+Email: ${email}%0A
+Teléfono: ${telefono}%0A
+Fecha: ${fecha}%0A
+Ciudad: ${ciudad}%0A
+Servicio: ${servicio}%0A
+Para: ${lugar}`;
+
+  let url = `https://wa.me/526624044296?text=${mensaje}`;
+
+  window.open(url, "_blank");
+});
+</script>
+
+
+
+</body>
+</html>
