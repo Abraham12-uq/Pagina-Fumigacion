@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Fumigaciones El Rancho</title>
+<title>Plagafin Fumigaciones</title>
 
 <style>
 body {
@@ -19,9 +19,9 @@ body {
   align-items: center;
   justify-content: space-between;
   background: white;
-  padding: 10px 20px;
+  padding: 15px 30px;
 
-  position: sticky;   /* 🔥 clave */
+  position: relative;   /* 🔥 clave */
   top: 0;             /* se pega arriba */
   z-index: 1000;      /* se queda encima de todo */
 
@@ -29,7 +29,8 @@ body {
 }
 
 .logo img {
-  height: 60px;
+  height: 90px;
+  object-fit: contain;
 }
 
 .menu a {
@@ -51,7 +52,7 @@ body {
   gap: 10px;
   color: #2c3e50;
   font-weight: bold;
-<span class="horario">Atención: 8AM - 8PM</span>
+
 }
 
 
@@ -570,11 +571,6 @@ body {
 }
  
 .barra-anuncio {
-  width: 100%;
-  background: #2f3e4e;
-  color: white;
-  padding: 8px 0;
-  overflow: hidden;
   position: relative;
 }
 
@@ -585,18 +581,6 @@ body {
   white-space: nowrap;
 }
 
-/* texto que se mueve */
-.barra-anuncio {
-  width: 100%;
-  background: #2f3e4e;
-  color: white;
-  padding: 8px 0;
-  overflow: hidden;
-
-  position: sticky;
-  top: 80px; /* 🔥 AJUSTE CLAVE */
-  z-index: 999;
-}
 .contenedor-texto {
   overflow: hidden;
   white-space: nowrap;
@@ -862,12 +846,211 @@ html {
   color: #2c3e50;
 }
 
+ 
+ .top-fixed {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+ .card-servicio img {
+  width: 100%;
+  max-width: 120px;   /* 🔥 controla el tamaño */
+  height: 120px;      /* 🔥 tamaño fijo */
+  object-fit: contain; /* 🔥 evita deformación */
+  display: block;
+  margin: 15px auto;
+}
+
+ /* CARRUSEL AUTOMÁTICO 🔥 */
+.carrusel {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  width: max-content;
+  animation: slideInfinito 20s linear infinite;
+}
+
+.slider img {
+  width: 400px; /* ajusta tamaño */
+  height: 100%;
+  object-fit: cover;
+}
+
+/* animación continua */
+@keyframes slideInfinito {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+ /* CARRUSEL TIPO SWIPE 🔥 */
+.carrusel-swipe {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-swipe {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  /* ocultar barra */
+  scrollbar-width: none;
+}
+
+.slider-swipe::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-swipe {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  height: 320px; /* 🔥 ALTURA FIJA DEL CARRUSEL */
+}
+
+.slider-swipe img {
+  width: 100%;        /* 🔥 TODAS igual ancho */
+  height: 100%;       /* 🔥 TODAS igual alto */
+  object-fit: contain; /* 🔥 NO se cortan (importante para documentos) */
+
+  background: white;  /* 🔥 relleno elegante */
+  border-radius: 12px;
+
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+
+ /* CONTENEDOR DEL CARRUSEL A LA DERECHA */
+.carrusel-derecha {
+  width: 80%;
+  margin-left: auto; /* 🔥 lo empuja a la derecha */
+}
+
+/* AJUSTE VISUAL */
+.carrusel-derecha .slider-swipe img {
+  min-width: 100%;
+  height: 320px;
+}
+ 
+.slider-swipe img {
+  padding: 10px; /* espacio tipo marco */
+}
+
+
+.visor-certificaciones {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TODAS LAS IMÁGENES */
+.visor-certificaciones img {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+/* IMAGEN ACTIVA */
+.visor-certificaciones img.activa {
+  opacity: 1;
+}
+
+ .visor-certificaciones {
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+}
+ 
+ .visor-certificaciones img[src="REPSE.png"] {
+  width: 70%;   /* 🔥 más pequeño */
+  height: 70%;
+}
+
+.anuncios {
+  background: #f5f5f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.anuncios h2 {
+  color: #0b2a4a;
+  margin-bottom: 30px;
+}
+
+.anuncios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 🔥 solo 2 por fila = más grandes */
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.anuncio {
+  background: white;
+  padding: 25px;
+  border-radius: 16px; /* más elegante */
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+.anuncio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+
+.anuncio img {
+  width: auto;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.anuncio h3 {
+  margin-top: 15px;
+  color: #1e7d3a;
+}
+
+.anuncio p {
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .anuncios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
+
+<div class="top-fixed">
+
 <div class="header">
 
   <div class="logo">
@@ -902,7 +1085,7 @@ html {
       <span>
         Servicio profesional de fumigación, aprovecha y llévate un descuento del 10% por cotizar tu servicio en línea • 
         Nuestro servicio es 100% profesional y con garantía de calidad, no lo dejes pasar e inicia tu contrato hoy mismo • 
-        Abierto de 8:00AM a 8:00PM agenda tu cita y termina con los inquilinos no deseados •
+        Abierto de 9:00AM a 5:00PM agenda tu cita y termina con los inquilinos no deseados •
       </span>
 
       <!-- 🔁 DUPLICADO EXACTO -->
@@ -914,6 +1097,7 @@ html {
     </div>
   </div>
 </div>
+</div> <!-- cierre de top-fixed -->
 
 <!-- HERO 🔥 -->
 <div class="hero">
@@ -1008,14 +1192,14 @@ html {
   </div>
 
   <div class="card-servicio">
-    <h3>Control de Mosquitos</h3>
-    <img src="Mosquitos.png">
-    <p>Reduce mosquitos y evita enfermedades con tratamientos especializados.</p>
+    <h3>Control de Arañas</h3>
+    <img src="aranas.png">
+    <p>Eliminamos arañas de forma segura, evitando su reaparición y protegiendo tu hogar.</p>
   </div>
 
   <div class="card-servicio">
     <h3>Desinfección Profesional</h3>
-    <img src="Desinfeccion.png">
+    <img src="desinfeccion.png">
     <p>Eliminación de bacterias y virus para espacios seguros y saludables.</p>
   </div>
 
@@ -1090,23 +1274,78 @@ html {
     </ul>
   </div>
 
-<!-- BLOQUE 4 -->
-  <div class="item texto">
-    <h2>PROPUESTA DE VALOR</h2>
-    <h3>¿QUÉ TE OFRECEMOS?</h3>
+  <!-- BLOQUE 4 -->
+<div class="item texto">
+  <h2>LICENCIAS Y TRABAJO</h2>
+  <h3>NUESTRO PROCESO</h3>
 
-    <p>
-      Servicios profesionales de fumigación adaptados a tu empresa
-      y cumplimiento de normas sanitarias.
-    </p>
+  <p>
+    Contamos con certificaciones y procesos profesionales
+    para garantizar un servicio seguro y de calidad.
+  </p>
+</div>
+
+<div class="item imagen">
+  <div class="visor-certificaciones">
+  <img src="REPSE.png" class="activa">
+  <img src="Cofrepris.png">
+  <img src="Secretariadesalud.png">
+</div>
+</div>
+
+<!-- BLOQUE 5 -->
+  <div class="item imagen">
+    <img src="Licencia.png">
   </div>
 
-  <div class="item imagen">
-    <img src="servicio.png">
+  <div class="item texto">
+    <h2>DATOS CLAVE QUE UNA EMPRESA</h2>
+    <h3>DE TRANSPORTE DEBE SABER</h3>
+
+    <p>Durante la primavera en México...</p>
+
+    <ul>
+      <li>Mayor reproducción de plagas</li>
+      <li>Riesgo en transporte</li>
+      <li>Contaminación cruzada</li>
+    </ul>
   </div>
 
 
 </div>
+
+
+
+<!-- ANUNCIOS -->
+<div class="seccion anuncios" id="anuncios">
+
+  <h2>Anuncios</h2>
+
+  <div class="anuncios-grid">
+
+    <div class="anuncio">
+      <img src="Anuncio1.png">
+      <h3>Promoción 10% OFF</h3>
+      <p>Aprovecha descuento en tu primer servicio.</p>
+    </div>
+
+    <div class="anuncio">
+      <img src="Anuncio2.png">
+      <h3>Servicio Empresarial</h3>
+      <p>Planes especiales para negocios.</p>
+    </div>
+
+    <div class="anuncio">
+      <img src="Anuncio3.png">
+      <h3>Control Preventivo</h3>
+      <p>Evita plagas antes de que aparezcan.</p>
+    </div>
+
+  </div>
+
+</div>
+
+
 
 <!-- FAQ -->
 <div class="seccion faq" id="faq">
@@ -1123,7 +1362,7 @@ html {
   <div class="faq-item">
     <button class="faq-question">¿Tengo que salir de mi casa?</button>
     <div class="faq-answer">
-      <p>En la mayoría de los casos sí, por unas horas, dependiendo del tipo de fumigación.</p>
+      <p>En la mayoría de los casos no, porque el producto del fumigante es sin olor</p>
     </div>
   </div>
 
@@ -1137,14 +1376,15 @@ html {
   <div class="faq-item">
     <button class="faq-question">¿Ofrecen garantía?</button>
     <div class="faq-answer">
-      <p>Sí, contamos con garantía en nuestros servicios. Si la plaga continúa, regresamos sin costo.</p>
+      <p>Sí, contamos con garantía de 30 días, que corresponde al tiempo de efectividad residual del producto aplicado.
+Para contar con una protección por mayor tiempo, es necesario contratar una póliza semestral o anual con Plagafin. </p>
     </div>
   </div>
 
   <div class="faq-item">
     <button class="faq-question">¿Qué plagas eliminan?</button>
     <div class="faq-answer">
-      <p>Cucarachas, ratas, ratones, termitas, mosquitos y más.</p>
+      <p>Cucarachas, ratas, ratones, termitas, arañas y todo tipo de insectos.</p>
     </div>
   </div>
 
@@ -1218,7 +1458,7 @@ html {
   </div>
 </div>
 <footer style="background:#0b2a4a; color:white; text-align:center; padding:20px;">
-  © 2026 Fumigaciones El Rancho - Todos los derechos reservados
+  © 2026 Plagafin Fumigaciones - Todos los derechos reservados
 </footer>
 
  <script>
@@ -1322,20 +1562,7 @@ window.addEventListener("scroll", function() {
 });
 </script>
 
-<script>
-const frases = [
-  "Servicio profesional de fumigación aprovecha y llévate un descuento del 10% por cotizar tu servicio en línea",
-  "Nuestro servicio es 100% profesional y con garantía de calidad, no lo dejes pasar e inicia tu contrato hoy mismo"
-"Abierto de 8:00AM a 8:00PM AGENDA YA TU CITA Y TERMINA CON LOS INQUILINOS NO DESEADOS"
-];
 
-let i = 0;
-const barra = document.getElementById("texto-barra");
-
-setInterval(() => {
-  i = (i + 1) % frases.length;
-  barra.textContent = frases[i];
-}, 12000); // 🔥 más tiempo para textos largos
 </script>
 
  <script>
@@ -1409,7 +1636,41 @@ Para: ${lugar}`;
 });
 </script>
 
+<script>
+const slider = document.getElementById("sliderSwipe");
 
+let scrollAmount = 0;
+const speed = 1; // velocidad (puedes subir a 2 si quieres más rápido)
+
+function autoScroll() {
+  scrollAmount += speed;
+
+  // cuando llega a la mitad (porque duplicamos)
+  if (scrollAmount >= slider.scrollWidth / 2) {
+    scrollAmount = 0;
+  }
+
+  slider.scrollLeft = scrollAmount;
+
+  requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
+</script>
+
+ <script>
+const imagenes = document.querySelectorAll(".visor-certificaciones img");
+let index = 0;
+
+setInterval(() => {
+  imagenes[index].classList.remove("activa");
+
+  index++;
+  if (index >= imagenes.length) index = 0;
+
+  imagenes[index].classList.add("activa");
+}, 2500); // cambia cada 2.5 segundos
+</script>
 
 </body>
 </html>
