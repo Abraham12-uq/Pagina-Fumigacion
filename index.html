@@ -1020,10 +1020,10 @@ html {
 }
 
 .anuncio img {
-  width: auto;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: contain;
 }
 
 .anuncio h3 {
@@ -1039,6 +1039,18 @@ html {
 @media (max-width: 768px) {
   .anuncios-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .anuncio {
+    padding: 15px;
+  }
+
+  .anuncio img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
   }
 }
 
@@ -1474,6 +1486,7 @@ Para contar con una protección por mayor tiempo, es necesario contratar una pó
     <img src="Cliente5.png" alt="Cliente 5">
     <img src="Cliente6.png" alt="Cliente 6">
     <img src="Cliente7.png" alt="Cliente 7">
+    <img src="Cliente8.png" alt="Cliente 8">
     
 
   </div>
