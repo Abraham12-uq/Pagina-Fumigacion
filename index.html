@@ -32,7 +32,7 @@ body {
   height: 90px;              /* tamaño base */
   object-fit: contain;
 
-  transform: scale(1.8);     /* 🔥 aquí crece visualmente */
+  transform: scale(1.5);     /* 🔥 aquí crece visualmente */
   transform-origin: left center; /* crece desde la izquierda */
 }
 
@@ -1134,6 +1134,26 @@ html {
 }
 
 
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+ .hero-texto {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.hero-texto.activo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 </style>
 </head>
 
@@ -1545,7 +1565,7 @@ Para contar con una protección por mayor tiempo, es necesario contratar una pó
 <!-- CLIENTES -->
 <div class="clientes">
 
-  <h2>Alguno de nuestros Clientes</h2>
+  <h2>Algunos de nuestros Clientes</h2>
 
   <div class="clientes-grid">
 
@@ -1795,6 +1815,18 @@ const fechaHoy = `${año}-${mes}-${dia}`;
 
 // permitir hoy como mínimo
 fechaInput.setAttribute("min", fechaHoy);
+</script>
+
+ <script>
+window.addEventListener("load", function() {
+  document.body.classList.add("loaded");
+});
+</script>
+
+ <script>
+window.addEventListener("load", function() {
+  document.querySelector(".hero-texto").classList.add("activo");
+});
 </script>
 
 </body>
