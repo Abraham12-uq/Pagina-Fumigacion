@@ -18,33 +18,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
-  padding: 15px 30px;
 
-  position: relative;   /* 🔥 clave */
-  top: 0;             /* se pega arriba */
-  z-index: 1000;      /* se queda encima de todo */
+  background: #0b2a4a; /* 🔥 azul principal */
+  padding: 10px 30px;
+  height: 110px;
+  box-sizing: border-box;
 
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  position: relative;
+  top: 0;
+  z-index: 1000;
+
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
 }
 
 .logo img {
-  height: 90px;              /* tamaño base */
+  height: 150px;              /* tamaño base */
   object-fit: contain;
 
   transform: scale(1.5);     /* 🔥 aquí crece visualmente */
-  transform-origin: left center; /* crece desde la izquierda */
+  transform-origin: left center;
+  margin-top: 25px; /* crece desde la izquierda */
 }
 
 .menu a {
-  color: #2c3e50;
+  color: white;
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
 }
 
 .menu a:hover {
-  color: #27ae60;
+  color: #4fc3f7;
 }
 
 /* CONTACTO HEADER */
@@ -53,7 +57,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #2c3e50;
+  color: white;
   font-weight: bold;
 
 }
@@ -75,10 +79,9 @@ body {
   align-items: center;
   padding: 80px;
 
-  
-    background:
-  linear-gradient(to right, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0)),
-  url('fumigacion.png');
+  background:
+    linear-gradient(to right, rgba(255,255,255,0.5) 35%, rgba(255,255,255,0)),
+    url('fumigacion.png');
 
   background-size: cover;
   background-position: center right;
@@ -97,7 +100,9 @@ body {
   color: #222;
 }
 
-
+.hero-texto h1 span {
+  color: #1e7d3a;
+}
 
 .hero-texto p {
   color: #444;
@@ -169,7 +174,7 @@ body {
 }
 
 .subtitulo {
-  color: #2f2e2e;
+  color: #45637b;
 }
  
 
@@ -181,7 +186,7 @@ body {
 }
 
 .hero-texto h1 span {
-  color: #01376c; /* 🔥 azul marino */
+  color: #00366d; /* 🔥 azul marino */
 }
 
 .hero-texto p {
@@ -220,7 +225,7 @@ body {
 /* BOTON */
 
 .boton {
-  background: #0053a7; /* 🔥 azul marino */
+  background: #00488f; /* 🔥 azul marino */
   color: white;
   padding: 15px 30px;
   text-decoration: none;
@@ -559,13 +564,14 @@ body {
  
  .barra-anuncio {
   width: 100%;
-  background: #2f3e4e; /* gris azulado 🔥 */
-  color: white;
+  background: rgb(255, 255, 255); /* gris azulado 🔥 */
+  color: rgb(8, 8, 8);
   text-align: center;
   padding: 8px;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0.5px;
+  
 }
 
 #texto-barra {
@@ -845,7 +851,7 @@ html {
 .numero-contacto {
   font-size: 15px;
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
 }
 
  
@@ -1115,7 +1121,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
+  background: #0050a0;
   padding: 10px 30px; /* 🔥 baja el padding */
 
   height: 110px; /* 🔥 AUMENTA la altura del header */
@@ -1153,6 +1159,7 @@ body.loaded {
   transform: translateY(0);
 }
 
+ border-bottom: 1px solid #ddd;
 </style>
 </head>
 
