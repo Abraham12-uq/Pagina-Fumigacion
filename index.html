@@ -6,6 +6,8 @@
 
 <title>Plagafin Fumigaciones</title>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 <style>
 body {
   font-family: Arial;
@@ -278,12 +280,18 @@ body {
 }
 
 .card-servicio {
-  background: white;
+  background: linear-gradient(135deg, #0b2a4a, #0050a0);
+  color: white;
   width: 260px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  padding: 25px;
+  border-radius: 16px;
+
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+
+  text-align: center; /* 🔥 NUEVO: centra todo */
 }
 
 .card-servicio:hover {
@@ -863,11 +871,23 @@ html {
 
  .card-servicio img {
   width: 100%;
-  max-width: 120px;   /* 🔥 controla el tamaño */
-  height: 120px;      /* 🔥 tamaño fijo */
-  object-fit: contain; /* 🔥 evita deformación */
+  max-width: 160px;
+  height: 160px;
+  object-fit: contain;
   display: block;
   margin: 15px auto;
+
+  /* 🔥 EFECTO PRO */
+  filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.4));
+  transition: 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+/* 🔥 HOVER ANIMADO */
+.card-servicio:hover img {
+  transform: scale(1.1) rotate(3deg);
+  filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.6));
 }
 
  /* CARRUSEL AUTOMÁTICO 🔥 */
@@ -1160,6 +1180,125 @@ body.loaded {
 }
 
  border-bottom: 1px solid #ddd;
+
+ .card-servicio h3 {
+  color: #4fc3f7; /* azul claro elegante */
+  margin-bottom: 10px;
+}
+
+.card-servicio p {
+  color: #e3f2fd;
+}
+
+ .card-servicio::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+
+  transform: rotate(25deg);
+  transition: 0.5s;
+}
+
+ .card-servicio:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0px 20px 40px rgba(0,0,0,0.4);
+}
+
+.card-servicio:hover::before {
+  left: 100%;
+}
+ 
+ .card-servicio:hover img {
+  transform: scale(1.1) rotate(3deg);
+  filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.6));
+}
+
+.card-servicio::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+  z-index: 0;
+}
+
+.anuncio-video {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ambos ocupan el mismo espacio */
+.anuncio-video img,
+.anuncio-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔥 llena bien */
+  background: white;
+  border-radius: 12px;
+
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* visible */
+.anuncio-video .activa {
+  opacity: 1;
+}
+
+ .anuncio-video {
+  position: relative;
+  overflow: hidden;
+  height: 450px; /* 🔥 CLAVE */
+  border-radius: 12px;
+}
+
+.anuncio-video2 {
+  position: relative;
+  overflow: hidden;
+  height: 450px; /* 🔥 esto es clave */
+  border-radius: 12px;
+}
+
+.anuncio-video2 img,
+.anuncio-video2 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%; /* 🔥 ahora sí respeta el contenedor */
+
+  object-fit: contain; /* 🔥 no se corta */
+  background: #fff;
+
+  border-radius: 12px;
+
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.anuncio-video2 .activa {
+  opacity: 1;
+}
+
+
+
 </style>
 </head>
 
@@ -1203,7 +1342,7 @@ body.loaded {
       <span>
         Servicio profesional de fumigación, aprovecha y llévate un descuento del 10% por cotizar tu servicio en línea • 
         Nuestro servicio es 100% profesional y con garantía de calidad, no lo dejes pasar e inicia tu contrato hoy mismo • 
-        Abierto de 9:00AM a 5:00PM agenda tu cita y termina con los inquilinos no deseados •
+        Abierto de Lunes a Viernes de 9:00AM a 5:00PM agenda tu cita y termina con los inquilinos no deseados •
       </span>
 
       <!-- 🔁 DUPLICADO EXACTO -->
@@ -1446,9 +1585,15 @@ Cumplimos con todas las normas para brindarte un trabajo seguro y profesional.
       <img src="Anuncio1.png">
           </div>
 
-    <div class="anuncio">
-      <img src="Anuncio2.png">
-          </div>
+   <div class="anuncio anuncio-video2">
+
+  <img src="Anuncio2.png" class="img-anuncio2 activa">
+
+  <video class="video-anuncio2" muted playsinline>
+    <source src="Anuncio2.mp4" type="video/mp4">
+  </video>
+
+</div>
 
     <div class="anuncio">
       <img src="Anuncio3.png">
@@ -1458,9 +1603,15 @@ Cumplimos con todas las normas para brindarte un trabajo seguro y profesional.
       <img src="Anuncio4.png">
           </div>
 
- <div class="anuncio">
-      <img src="Anuncio5.png">
-          </div>
+<div class="anuncio anuncio-video">
+
+  <img src="Anuncio5.png" class="img-anuncio activa">
+
+  <video class="video-anuncio" muted playsinline>
+    <source src="Anuncio5.mp4" type="video/mp4">
+  </video>
+
+</div>
 
  <div class="anuncio">
       <img src="Anuncio6.png">
@@ -1536,7 +1687,7 @@ Para contar con una protección por mayor tiempo, es necesario contratar una pó
     </div>
 
     <div class="fila">
-      <input type="date" id="fecha" required>
+      <input type="text" id="fecha" placeholder="Selecciona una fecha" required>
       <input type="text" id="ciudad" placeholder="Ciudad / Estado" required>
     </div>
 
@@ -1548,6 +1699,7 @@ Para contar con una protección por mayor tiempo, es necesario contratar una pó
         <option>Control de roedores</option>
         <option>Eliminar Termitas</option>
         <option>Servicio de sanitizacion</option>
+        <option>Eliminaciar Chinches</option>
       </select>
 
       <select id="lugar">
@@ -1586,6 +1738,10 @@ Para contar con una protección por mayor tiempo, es necesario contratar una pó
     <img src="Cliente9.png" alt="Cliente 9">
     <img src="Cliente10.png" alt="Cliente 10">
     <img src="Cliente11.png" alt="Cliente 11">
+    <img src="Cliente12.png" alt="Cliente 12">
+    <img src="Cliente13.png" alt="Cliente 13">
+    <img src="Cliente14.png" alt="Cliente 14">
+    <img src="Cliente15.png" alt="Cliente 15">
     
 
   </div>
@@ -1808,20 +1964,7 @@ setInterval(() => {
 }, 2500); // cambia cada 2.5 segundos
 </script>
  
-<script>
-const fechaInput = document.getElementById("fecha");
 
-// 🔥 obtener fecha local correcta (México)
-const hoy = new Date();
-const año = hoy.getFullYear();
-const mes = String(hoy.getMonth() + 1).padStart(2, '0');
-const dia = String(hoy.getDate()).padStart(2, '0');
-
-const fechaHoy = `${año}-${mes}-${dia}`;
-
-// permitir hoy como mínimo
-fechaInput.setAttribute("min", fechaHoy);
-</script>
 
  <script>
 window.addEventListener("load", function() {
@@ -1832,6 +1975,110 @@ window.addEventListener("load", function() {
  <script>
 window.addEventListener("load", function() {
   document.querySelector(".hero-texto").classList.add("activo");
+});
+</script>
+
+ <script>
+const contenedor = document.querySelector(".anuncio-video");
+const imagen = contenedor.querySelector(".img-anuncio");
+const video = contenedor.querySelector(".video-anuncio");
+
+let mostrandoImagen = true;
+
+function cicloAnuncio() {
+
+  if (mostrandoImagen) {
+    // 🔥 mostrar video
+    imagen.classList.remove("activa");
+    video.classList.add("activa");
+    video.currentTime = 0;
+    video.play();
+
+    mostrandoImagen = false;
+
+    // duración del video (ajusta si quieres)
+    setTimeout(cicloAnuncio, 7000);
+
+  } else {
+    // 🔥 mostrar imagen
+    video.pause();
+    video.classList.remove("activa");
+    imagen.classList.add("activa");
+
+    mostrandoImagen = true;
+
+    // 3 segundos imagen
+    setTimeout(cicloAnuncio, 3000);
+  }
+}
+
+// iniciar ciclo
+cicloAnuncio();
+</script>
+
+ <script>
+const contenedor2 = document.querySelector(".anuncio-video2");
+const imagen2 = contenedor2.querySelector(".img-anuncio2");
+const video2 = contenedor2.querySelector(".video-anuncio2");
+
+let mostrandoImagen2 = true;
+
+function cicloAnuncio2() {
+
+  if (mostrandoImagen2) {
+    imagen2.classList.remove("activa");
+    video2.classList.add("activa");
+    video2.currentTime = 0;
+    video2.play();
+
+    mostrandoImagen2 = false;
+
+    setTimeout(cicloAnuncio2, 5000); // duración video
+
+  } else {
+    video2.pause();
+    video2.classList.remove("activa");
+    imagen2.classList.add("activa");
+
+    mostrandoImagen2 = true;
+
+    setTimeout(cicloAnuncio2, 3000); // imagen 3s
+  }
+}
+
+cicloAnuncio2();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+flatpickr("#fecha", {
+  dateFormat: "Y-m-d",
+  minDate: "today",
+
+  disable: [
+    function(date) {
+      return (date.getDay() === 0 || date.getDay() === 6);
+    }
+  ]
+});
+</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+
+<script>
+flatpickr("#fecha", {
+  locale: "es",
+  dateFormat: "Y-m-d",
+  minDate: "today",
+
+  disable: [
+    function(date) {
+      return (date.getDay() === 0 || date.getDay() === 6);
+    }
+  ]
 });
 </script>
 
