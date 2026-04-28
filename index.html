@@ -6,6 +6,8 @@
 
 <title>Plagafin Fumigaciones</title>
 
+<link rel="icon" type="image/png" href="favicon.png">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 <style>
@@ -98,7 +100,9 @@ body {
 }
 
 .hero-texto h1 {
-  font-size: 65px;
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 10px 0;
   color: #222;
 }
 
@@ -1297,7 +1301,131 @@ body.loaded {
   opacity: 1;
 }
 
+/* 📱 MEJORAS SOLO PARA CELULAR */
+@media (max-width: 768px) {
 
+  /* HEADER */
+  .header {
+    height: auto;
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo img {
+    height: 60px;
+    transform: none;
+    margin: 0;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .menu a {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .contacto-header {
+    margin-top: 10px;
+  }
+
+  /* HERO */
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+    background-position: center;
+  }
+
+  .hero-texto h1 {
+    font-size: 36px;
+  }
+
+  .hero-texto p {
+    font-size: 16px;
+  }
+
+  /* BENEFICIOS */
+  .beneficios {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .item strong {
+    font-size: 11px;
+  }
+
+  /* BOTÓN */
+  .boton {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* SERVICIOS */
+  .contenedor-servicios {
+    grid-template-columns: 1fr;
+  }
+
+  .card-servicio {
+    width: 100%;
+  }
+
+  /* NOVEDADES */
+  .novedades-grid .texto {
+    padding: 25px;
+  }
+
+  .novedades-grid h2 {
+    font-size: 26px;
+  }
+
+  .novedades-grid p {
+    font-size: 16px;
+  }
+
+  /* ANUNCIOS */
+  .anuncios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CLIENTES */
+  .clientes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FORMULARIO */
+  .fila {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 768px) {
+  canvas,
+  .fondo-animado,
+  .card-servicio {
+    animation: none !important;
+  }
+}
+.hero-texto h5 {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .hero-texto h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero-texto h5 {
+    font-size: 14px;
+  }
+}
 
 </style>
 </head>
